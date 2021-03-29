@@ -1,9 +1,8 @@
 from django.urls import path, include
 
-from django.contrib import admin
 from django.http import HttpResponse
 
-admin.autodiscover()
+# admin.autodiscover()
 
 
 # To add a new path, first import the app:
@@ -19,5 +18,5 @@ def greet(request):
 
 urlpatterns = [
     path("", greet),
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
 ]
