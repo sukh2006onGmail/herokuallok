@@ -5,7 +5,6 @@ from django.http import HttpResponse
 
 admin.autodiscover()
 
-import hello.views
 
 # To add a new path, first import the app:
 # import blog
@@ -19,8 +18,6 @@ def greet(request):
     return HttpResponse('aa')
 
 urlpatterns = [
-    path('greet', greet),
-    path("", hello.views.index, name="index"),
-    path("db/", hello.views.db, name="db"),
+    path("", greet),
     path("admin/", admin.site.urls),
 ]
