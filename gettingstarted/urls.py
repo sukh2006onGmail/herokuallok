@@ -1,6 +1,7 @@
 from django.urls import path, include
 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 # admin.autodiscover()
 
@@ -16,7 +17,11 @@ from django.http import HttpResponse
 def greet(request):
     return HttpResponse('aa')
 
+def stat(request):
+    return render(request, 'index.html')
+
 urlpatterns = [
     path("", greet),
+    path("stat", stat),
     # path("admin/", admin.site.urls),
 ]
