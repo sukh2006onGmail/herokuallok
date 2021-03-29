@@ -18,7 +18,8 @@ def greet(request):
     return HttpResponse('aa')
 
 def stat(request):
-    return render(request, 'index.html')
+    q = Question.objects.all()
+    return render(request, 'index.html', {'data': q})
 
 urlpatterns = [
     path("", greet),
